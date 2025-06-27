@@ -9,12 +9,6 @@ dist/
 .cache/
 *.local
 
-# Storybook 相关
-packages/docs/storybook/.storybook/out/
-packages/docs/storybook/.storybook/.cache/
-packages/docs/storybook/storybook-static/
-packages/docs/storybook/problem/
-
 # VitePress 相关
 packages/docs/vitepress/.vitepress/cache/
 packages/docs/vitepress/.vitepress/dist/
@@ -32,7 +26,8 @@ jest-transform-cache/
 .DS_Store
 Thumbs.db
 .idea/
-# .vscode/
+.obsidian/
+.vscode/
 *.swp
 *.swo
 *.sublime-workspace
@@ -41,5 +36,3 @@ Thumbs.db
 *.tgz
 *.bak
 *.tmp
-
-*storybook.log
