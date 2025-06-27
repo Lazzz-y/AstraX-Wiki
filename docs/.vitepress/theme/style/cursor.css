@@ -1,0 +1,44 @@
+/* 自定义光标样式 */
+:root {
+  cursor: url("/images/cursor/arrow.gif") 0 0, auto !important;
+}
+
+a:hover, 
+button:hover,
+.link:hover,
+[role="button"]:hover {
+  cursor: url("/images/cursor/link.gif") 0 0, pointer !important;
+}
+
+/* 禁用状态 */
+[disabled] {
+  cursor: url("/images/cursor/no.gif") 0 0, not-allowed !important;
+}
+
+/* 输入框状态 */
+input, textarea, [contenteditable="true"] {
+  cursor: url("/images/cursor/beam.gif") 0 0, text !important;
+}
+
+/* 调整大小 */
+.resize {
+  cursor: url("/images/cursor/move.gif") 0 0, move !important;
+}
+
+/* 加载中状态 */
+.loading, 
+.processing,
+[aria-busy="true"] {
+  cursor: url("/images/cursor/busy.gif") 0 0, progress !important;
+}
+
+/* 精确选择 */
+.precise,
+[data-precise] {
+  cursor: url("/images/cursor/cross.gif") 0 0, crosshair !important;
+}
+
+/* 选择状态 */
+::selection {
+  background-color: rgba(85, 69, 98, 0.3);
+} 

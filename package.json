@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "@mmt817/super-gif": "^0.0.1",
+    "@types/lodash-es": "^4.17.12",
+    "typescript": "^5.8.3",
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs --mode development",
+    "docs:build": "vitepress build docs --mode production",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@hackernoon/pixel-icon-library": "^1.0.6",
+    "@mmt817/pixel-ui": "^1.6.0",
+    "@types/node": "^24.0.4",
+    "@vitepress-demo-preview/plugin": "^1.4.0",
+    "busuanzi.pure.js": "^1.0.3",
+    "clipboard-copy": "^4.0.1",
+    "lodash-es": "^4.17.21",
+    "markdown-it-mathjax3": "^4.3.2",
+    "nprogress-v2": "^1.1.10",
+    "sass-embedded": "^1.89.2",
+    "unocss": "^66.3.2",
+    "vite": "^5.4.19",
+    "vitepress-markdown-timeline": "^1.2.2",
+    "vitepress-plugin-group-icons": "^1.6.0",
+    "vue": "^3.5.17"
+  }
+}

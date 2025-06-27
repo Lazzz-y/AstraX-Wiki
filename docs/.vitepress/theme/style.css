@@ -1,0 +1,327 @@
+@import './style/rainbow.css';
+@import './style/custom-block.css';
+@import './style/hidden.css';
+@import './style/siderbarIcon.css';
+/* @import './style/cursor.css'; */
+
+@font-face {
+  font-family: 'Zpix';
+  src: url('/fonts/Zpix.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PS2P';
+  src: url('/fonts/PS2P.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007E, U+00A0-00FF;
+}
+
+:root {
+  --vp-font-family-base: "Zpix";
+  --vp-font-family-mono: "PS2P", "Zpix";
+  /* --vp-font-family-mono: "Zpix", "PS2P"; */
+}
+
+body {
+  font-family: var(--vp-font-family-base);
+  font-synthesis: weight;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* .vitepress/theme/style/var.css */
+.VPDoc h1 {
+  background: linear-gradient(left, 
+  #ff0000, #ff8000, #ffff00, #00ff00, 
+  #00ffff, #0000ff, #8000ff, #ff00ff);
+  background: -webkit-linear-gradient(left, 
+  #ff0000, #ff8000, #ffff00, #00ff00, 
+  #00ffff, #0000ff, #8000ff, #ff00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPHomeHero {
+  font-family: var(--vp-font-family-mono);
+}
+
+.VPHomeHero .text {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.VPFeature .box .details {
+  font-size: 14px;
+}
+
+pre, code {
+  --vp-code-font-size: 0.75em;
+}
+table pre,
+table code,
+.api-typing code {
+  --vp-code-font-size: 0.875em;
+  font-family: 'Zpix';
+}
+
+.vp-code code {
+  font-family: var(--vp-font-family-nomo);
+}
+
+.vitepress-demo-preview-preview {
+  font-family: var(--vp-font-family-mono);
+}
+
+/* nav backdrop-filter 效果 */
+.VPNav .VPNavBar.has-sidebar .content-body {
+  background-image: radial-gradient(transparent 1px, var(--vp-c-bg) 1px);
+  background-size: 4px 4px;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: saturate(50%) blur(4px);
+}
+
+.dark .VPNav .VPNavBar.has-sidebar .content-body {
+  background-image: radial-gradient(transparent 1px, var(--vp-c-bg) 1px);
+  background-color: rgba(36, 36, 36, 0.7) !important;
+}
+
+/* sidebar scrollbar */
+.VPSidebar {
+  scrollbar-width: none;
+  padding: 48px !important;
+  width: calc(var(--vp-sidebar-width) + 48px) !important;
+}
+
+.VPNav .VPNavBar .wrapper .container>.title {
+  padding-left: 48px;
+  width: calc(var(--vp-sidebar-width) + 48px);
+}
+
+.VPNav .VPNavBar .wrapper .container>.content {
+  padding-left: calc(var(--vp-sidebar-width) + 48px);
+}
+
+.VPNavBarTitle .title span {
+  height: var(--vp-nav-logo-height);
+  line-height: 1.4;
+}
+
+.VPDoc.has-sidebar.has-aside {
+  padding-left: 0;
+  padding-right: 0;
+
+  .container>.content {
+    display: flex;
+    justify-content: center;
+    .content-container {
+      min-width: 800px;
+      max-width: none;
+      width: 90%;
+    }
+  }
+}
+
+.VPContent.has-sidebar {
+  padding-left: calc(var(--vp-sidebar-width) + 48px) !important;
+  padding-right: 0 !important;
+}
+/* 确保暗色模式时高亮状态的链接可见 */
+.dark .VPSidebar .is-active .link {
+  color: var(--vp-c-brand) !important;
+}
+
+/* 修复暗色模式下的头部问题 */
+.dark .VPNav {
+  background-color: var(--vp-c-bg);
+}
+
+/* 确保暗色模式下导航栏背景正确 */
+.dark .VPNavBar:not(.has-sidebar) .content-body,
+.dark .VPNavBar.has-sidebar .content-body {
+  background-color: var(--vp-c-bg);
+}
+
+/* 文章头部样式修复 */
+.VPDoc .VPDocHero {
+  padding-top: 4rem;
+}
+
+.dark .VPDoc h2 {
+  /* background: -webkit-linear-gradient(10deg, #00FFFF 5%, #00FF7F 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: rgba(255,255,255, 0.8) !important;
+}
+
+.dark .VPDoc h3 {
+  /* background: -webkit-linear-gradient(10deg, #00FFFF 5%, #00FF7F 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: rgba(255,255,255, 0.8) !important;
+}
+
+/* 暗色模式下页面切换组件 */
+.dark .VPDocFooter .prev-next {
+  border-top-color: rgba(84, 84, 84, 0.48);
+}
+
+/* 导航条暗色模式优化 */
+.dark .VPLocalNav {
+  border-top-color: rgba(84, 84, 84, 0.48);
+  border-bottom-color: rgba(84, 84, 84, 0.48);
+}
+
+/* 处理表格在暗色模式下的显示 */
+.dark .vp-doc table {
+  border-color: rgba(84, 84, 84, 0.48) !important;
+}
+
+.dark .vp-doc th,
+.dark .vp-doc td {
+  border-color: rgba(84, 84, 84, 0.48) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark .vp-doc tr:nth-child(2n) {
+  background-color: rgba(84, 84, 84, 0.15) !important;
+}
+
+/* 处理自定义块在暗色模式下的显示 */
+.dark .custom-block {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 处理大纲导航 */
+.dark .VPDocAside .outline-title,
+.dark .VPDocAside .outline-link {
+  color: rgba(235, 235, 235, 0.8) !important;
+}
+
+.dark .VPDocAside .outline-link.active {
+  color: var(--vp-c-brand) !important;
+}
+
+/* 确保暗色模式下卡片文字可见 */
+.dark .VPFeature .title,
+.dark .VPFeature .details {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 暗色模式下文章头部 */
+.dark .VPDoc .VPDocHero {
+  background-color: var(--vp-c-bg);
+}
+
+/* 确保暗色模式下的内容区域背景色 */
+.dark .VPDoc .container {
+  background-color: var(--vp-c-bg);
+}
+
+/* 强制重置暗色模式下所有文本颜色 - 确保最高优先级 */
+.dark {
+  color-scheme: dark;
+}
+
+.dark [class*="vp-"] {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+/* 强制覆盖可能未被捕获的特定元素 */
+.dark .vp-doc strong,
+.dark .vp-doc b,
+.dark .vp-doc em,
+.dark .vp-doc u,
+.dark .vp-doc ins,
+.dark .vp-doc del,
+.dark .vp-doc s,
+.dark .vp-doc code,
+.dark .vp-doc kbd,
+.dark .vp-doc mark {
+  color: inherit !important;
+}
+
+/* 修复暗色模式下代码块的样式 */
+.dark .vp-code-container,
+.dark div[class*='language-'] {
+  background-color: #1e1e1e !important; /* 更深色、更清晰的背景 */
+  backdrop-filter: none !important; /* 移除可能的模糊效果 */
+  box-shadow: none !important; /* 移除可能的阴影效果 */
+}
+
+/* 确保代码文本在暗色模式下清晰可见 */
+.dark code {
+  background-color: rgba(40, 40, 40, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 代码块内部的文本 */
+.dark .vp-code-container code,
+.dark div[class*='language-'] code {
+  color: #e6e6e6 !important; /* 略微灰白色文字，更好的对比度 */
+  text-shadow: none !important; /* 移除可能的文本阴影 */
+  background-color: transparent !important; /* 确保代码内容背景透明 */
+}
+
+/* 代码块的各种高亮颜色 */
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+  color: #608b4e !important;
+}
+
+.dark .token.punctuation {
+  color: #d4d4d4 !important;
+}
+
+.dark .token.property,
+.dark .token.tag,
+.dark .token.boolean,
+.dark .token.number,
+.dark .token.constant,
+.dark .token.symbol,
+.dark .token.deleted {
+  color: #569cd6 !important;
+}
+
+.dark .token.selector,
+.dark .token.attr-name,
+.dark .token.string,
+.dark .token.char,
+.dark .token.builtin,
+.dark .token.inserted {
+  color: #ce9178 !important;
+}
+
+.dark .token.operator,
+.dark .token.entity,
+.dark .token.url,
+.dark .language-css .token.string,
+.dark .style .token.string {
+  color: #d4d4d4 !important;
+}
+
+.dark .token.atrule,
+.dark .token.attr-value,
+.dark .token.keyword {
+  color: #c586c0 !important;
+}
+
+.dark .token.function,
+.dark .token.class-name {
+  color: #dcdcaa !important;
+}
+
+.dark .token.regex,
+.dark .token.important,
+.dark .token.variable {
+  color: #9cdcfe !important;
+}

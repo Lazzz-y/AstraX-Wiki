@@ -1,0 +1,410 @@
+/* 搜索框样式调整 - DocSearch样式（Algolia搜索） */
+.DocSearch-Button {
+  background-color: transparent;
+  border: 1px solid var(--vp-c-border);
+  transition: border-color 0.25s;
+}
+
+.dark .DocSearch-Button {
+  background-color: rgba(36, 36, 36, 0.7); 
+  border-color: var(--vp-c-border);
+}
+
+.DocSearch-Button:hover {
+  background-color: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-brand);
+}
+
+.dark .DocSearch-Button:hover {
+  background-color: rgba(48, 48, 48, 0.7);
+}
+
+/* 搜索弹出框调整 */
+.DocSearch-Container {
+  z-index: 100;
+}
+
+.DocSearch-Modal {
+  background-color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-border);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dark .DocSearch-Modal {
+  background-color: #1c1c1c;
+  border-color: rgba(84, 84, 84, 0.48);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 搜索框内部内容 */
+.DocSearch-Input {
+  background-color: transparent;
+  color: var(--vp-c-text-1);
+}
+
+.dark .DocSearch-Input {
+  color: rgba(255, 255, 255, 0.85);
+  caret-color: var(--vp-c-brand);
+}
+
+.DocSearch-Input::placeholder {
+  color: var(--vp-c-text-3);
+}
+
+.dark .DocSearch-Input::placeholder {
+  color: rgba(235, 235, 235, 0.5);
+}
+
+/* 清空搜索按钮 */
+.dark .DocSearch-Reset {
+  color: rgba(235, 235, 235, 0.7);
+}
+
+.dark .DocSearch-Reset:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 搜索结果样式 */
+.DocSearch-Hit {
+  border-radius: 4px;
+}
+
+.DocSearch-Hit a {
+  background-color: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.dark .DocSearch-Hit a {
+  background-color: rgba(48, 48, 48, 0.7);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.DocSearch-Hit.DocSearch-Hit--Result a:hover,
+.DocSearch-Hit.DocSearch-Hit--Result.DocSearch-Hit--active a {
+  background-color: var(--vp-c-bg-mute);
+  border-color: var(--vp-c-brand);
+}
+
+.dark .DocSearch-Hit.DocSearch-Hit--Result a:hover,
+.dark .DocSearch-Hit.DocSearch-Hit--Result.DocSearch-Hit--active a {
+  background-color: rgba(64, 64, 64, 0.7);
+  border-color: var(--vp-c-brand);
+}
+
+/* 搜索结果分类标题 */
+.DocSearch-Hit-title {
+  color: var(--vp-c-text-1);
+}
+
+.dark .DocSearch-Hit-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 搜索结果路径 */
+.DocSearch-Hit-path {
+  color: var(--vp-c-text-3);
+}
+
+.dark .DocSearch-Hit-path {
+  color: rgba(235, 235, 235, 0.65);
+}
+
+/* 搜索结果图标 */
+.DocSearch-Hit-icon {
+  color: var(--vp-c-brand);
+}
+
+/* 搜索按钮图标 */
+.DocSearch-Button-Key {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-border);
+  box-shadow: none;
+}
+
+.dark .DocSearch-Button-Key {
+  background-color: rgba(64, 64, 64, 0.7);
+  color: rgba(235, 235, 235, 0.8);
+  border-color: rgba(84, 84, 84, 0.48);
+}
+
+/* 修复搜索按钮文字 */
+.DocSearch-Button-Placeholder {
+  color: var(--vp-c-text-2);
+}
+
+.dark .DocSearch-Button-Placeholder {
+  color: rgba(235, 235, 235, 0.8);
+}
+
+/* 搜索按钮图标 */
+.DocSearch-Search-Icon {
+  color: var(--vp-c-text-2);
+}
+
+.dark .DocSearch-Search-Icon {
+  color: rgba(235, 235, 235, 0.8);
+}
+
+/* 搜索结果高亮 */
+.DocSearch-Hits mark {
+  background: rgba(62, 175, 124, 0.3);
+  color: inherit;
+}
+
+.dark .DocSearch-Hits mark {
+  background: rgba(62, 175, 124, 0.3);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* 搜索结果头部 */
+.DocSearch-Modal .DocSearch-SearchBar {
+  background-color: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.dark .DocSearch-Modal .DocSearch-SearchBar {
+  background-color: #1c1c1c;
+  border-color: rgba(84, 84, 84, 0.48);
+}
+
+/* 搜索对话框底部 */
+.DocSearch-Footer {
+  background-color: var(--vp-c-bg);
+  border-top: 1px solid var(--vp-c-border);
+}
+
+.dark .DocSearch-Footer {
+  background-color: #1c1c1c;
+  border-color: rgba(84, 84, 84, 0.48);
+}
+
+.DocSearch-Label {
+  color: var(--vp-c-text-3);
+}
+
+.dark .DocSearch-Label {
+  color: rgba(235, 235, 235, 0.65);
+}
+
+/* 搜索快捷键按钮 */
+.dark .DocSearch-Commands-Key {
+  background: rgba(64, 64, 64, 0.7);
+  color: rgba(235, 235, 235, 0.8);
+  border-color: rgba(84, 84, 84, 0.48);
+  box-shadow: none;
+}
+
+/* 搜索弹出层活跃元素状态 */
+.dark .DocSearch-HitsFooter a,
+.dark .DocSearch-Help a,
+.dark .DocSearch-Logo a {
+  color: var(--vp-c-brand);
+}
+
+/* 搜索无结果提示 */
+.dark .DocSearch-NoResults-Prefill-List li {
+  color: rgba(235, 235, 235, 0.8);
+}
+
+.dark .DocSearch-NoResults-Prefill-List button {
+  background: rgba(64, 64, 64, 0.7);
+  color: rgba(235, 235, 235, 0.9);
+  border: 1px solid rgba(84, 84, 84, 0.48);
+}
+
+.dark .DocSearch-NoResults-Prefill-List button:hover,
+.dark .DocSearch-NoResults-Prefill-List button:focus {
+  background: rgba(84, 84, 84, 0.7);
+  border-color: var(--vp-c-brand);
+}
+
+/* ============ VitePress 本地搜索样式 (Local Search) ============ */
+
+/* 搜索按钮样式 */
+.VPNavBarSearch .VPNavBarSearchButton {
+  border: 1px solid var(--vp-c-border);
+  background-color: transparent;
+  transition: border-color 0.25s;
+}
+
+.dark .VPNavBarSearch .VPNavBarSearchButton {
+  background-color: rgba(36, 36, 36, 0.7);
+  border-color: var(--vp-c-border);
+}
+
+.VPNavBarSearch .VPNavBarSearchButton:hover {
+  border-color: var(--vp-c-brand);
+}
+
+/* 搜索图标颜色 */
+.VPNavBarSearch .VPNavBarSearchButton svg {
+  color: var(--vp-c-text-2);
+}
+
+.dark .VPNavBarSearch .VPNavBarSearchButton svg {
+  color: rgba(235, 235, 235, 0.8);
+}
+
+/* ============ 本地搜索弹出模态框样式 ============ */
+:root {
+  --vp-c-bg-search: var(--vp-c-bg);
+  --vp-c-border-search: var(--vp-c-border);
+  --vp-c-text-search: var(--vp-c-text-1);
+  --vp-c-text-search-2: var(--vp-c-text-2);
+  --vp-c-text-search-3: var(--vp-c-text-3);
+  --vp-c-search-result-bg: var(--vp-c-bg-soft);
+  --vp-c-search-result-hover: var(--vp-c-bg-mute);
+  --vp-c-search-highlight-bg: rgba(62, 175, 124, 0.1);
+  --vp-c-search-highlight-text: var(--vp-c-text-1);
+  --vp-c-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --vp-c-bg-search: #1c1c1c;
+  --vp-c-border-search: rgba(84, 84, 84, 0.48);
+  --vp-c-text-search: rgba(255, 255, 255, 0.85);
+  --vp-c-text-search-2: rgba(235, 235, 235, 0.8);
+  --vp-c-text-search-3: rgba(235, 235, 235, 0.65);
+  --vp-c-search-result-bg: rgba(48, 48, 48, 0.7);
+  --vp-c-search-result-hover: rgba(64, 64, 64, 0.7);
+  --vp-c-search-highlight-bg: rgba(62, 175, 124, 0.3);
+  --vp-c-search-highlight-text: rgba(255, 255, 255, 0.95);
+  --vp-c-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* 搜索模态框整体 */
+.VPLocalSearchBox {
+  color: var(--vp-c-text-search);
+}
+
+/* 搜索弹出层背景 */
+.VPLocalSearchBox .backdrop {
+  background-color: rgba(0, 0, 0, 0.3); /* 半透明背景 */
+}
+
+.dark .VPLocalSearchBox .backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* 暗色模式下更暗的背景 */
+}
+
+/* 搜索容器 */
+.VPLocalSearchBox .shell {
+  background-color: var(--vp-c-bg-search);
+  border: 1px solid var(--vp-c-border-search);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--vp-c-shadow);
+}
+
+/* 搜索框部分 */
+.VPLocalSearchBox .search-bar {
+  border-bottom: 1px solid var(--vp-c-border-search);
+}
+
+.VPLocalSearchBox .search-bar .search-icon {
+  color: var(--vp-c-text-search-3);
+}
+
+/* 搜索框输入框 */
+.VPLocalSearchBox .search-bar .search-input {
+  color: var(--vp-c-text-search);
+  caret-color: var(--vp-c-brand);
+}
+
+.VPLocalSearchBox .search-bar .search-input::placeholder {
+  color: var(--vp-c-text-search-3);
+}
+
+/* 清空按钮 */
+.VPLocalSearchBox .search-bar .clear-button {
+  color: var(--vp-c-text-search-3);
+}
+
+.VPLocalSearchBox .search-bar .clear-button:hover {
+  color: var(--vp-c-text-search);
+}
+
+/* 搜索结果容器 */
+.VPLocalSearchBox .results {
+  background-color: transparent;
+}
+
+/* 搜索结果项 */
+.VPLocalSearchBox .result-item {
+  border-top: 1px dashed var(--vp-c-border-search);
+  padding: 8px 16px;
+}
+
+.VPLocalSearchBox .result-item:first-child {
+  border-top: none;
+}
+
+.VPLocalSearchBox .result-item .link {
+  color: var(--vp-c-text-search);
+}
+
+.VPLocalSearchBox .result-item.focused,
+.VPLocalSearchBox .result-item:hover {
+  background-color: var(--vp-c-search-result-hover);
+}
+
+/* 搜索结果标题 */
+.VPLocalSearchBox .result-item .title {
+  color: var(--vp-c-text-search) !important;
+}
+
+/* 搜索结果路径 */
+.VPLocalSearchBox .result-item .subtitle {
+  color: var(--vp-c-text-search-3) !important;
+}
+
+/* 搜索结果正文 */
+.VPLocalSearchBox .result-item .content {
+  color: var(--vp-c-text-search-2) !important;
+}
+
+/* 高亮的搜索结果 */
+.VPLocalSearchBox .result-item mark {
+  background-color: var(--vp-c-search-highlight-bg);
+  color: var(--vp-c-search-highlight-text);
+  border-radius: 2px;
+  padding: 0 2px;
+  font-weight: bold;
+}
+
+.dark .VPLocalSearchBox .result-item mark {
+  text-shadow: none;
+}
+
+/* 无结果状态 */
+.VPLocalSearchBox .no-results {
+  color: var(--vp-c-text-search-2);
+  padding: 20px;
+  text-align: center;
+}
+
+/* 搜索快捷键指示区域 */
+.VPLocalSearchBox .footer {
+  color: var(--vp-c-text-search-3);
+  border-top: 1px solid var(--vp-c-border-search);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 搜索快捷键提示 */
+.VPLocalSearchBox .footer .kbd {
+  background-color: var(--vp-c-search-result-bg);
+  color: var(--vp-c-text-search-2);
+  border: 1px solid var(--vp-c-border-search);
+  border-radius: 4px;
+  padding: 0 6px;
+  box-shadow: 0 1px 0 var(--vp-c-border-search);
+  margin-right: 4px;
+}
+
+/* 搜索结果数量 */
+.VPLocalSearchBox .footer .count {
+  color: var(--vp-c-text-search-2);
+}
