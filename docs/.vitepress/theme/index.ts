@@ -14,6 +14,7 @@ import "./style/hidden.css";
 import "./style/rainbow.css";
 import "./style/dark.css";
 import "./style/search.css";
+import "./style/responsive.css";
 
 let homePageStyle: HTMLStyleElement | undefined;
 export default {

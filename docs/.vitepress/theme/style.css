@@ -94,8 +94,15 @@ table code,
 /* sidebar scrollbar */
 .VPSidebar {
   scrollbar-width: none;
-  padding: 48px !important;
-  width: calc(var(--vp-sidebar-width) + 48px) !important;
+  padding: 48px 24px !important;
+  width: calc(var(--vp-sidebar-width) + 24px) !important;
+}
+
+@media (max-width: 768px) {
+  .VPSidebar {
+    padding: 24px 12px !important;
+    width: 100% !important;
+  }
 }
 
 .VPNav .VPNavBar .wrapper .container>.title {
@@ -103,8 +110,21 @@ table code,
   width: calc(var(--vp-sidebar-width) + 48px);
 }
 
+@media (max-width: 768px) {
+  .VPNav .VPNavBar .wrapper .container>.title {
+    padding-left: 24px;
+    width: auto;
+  }
+}
+
 .VPNav .VPNavBar .wrapper .container>.content {
   padding-left: calc(var(--vp-sidebar-width) + 48px);
+}
+
+@media (max-width: 768px) {
+  .VPNav .VPNavBar .wrapper .container>.content {
+    padding-left: 0;
+  }
 }
 
 .VPNavBarTitle .title span {
@@ -120,10 +140,16 @@ table code,
     display: flex;
     justify-content: center;
     .content-container {
-      min-width: 800px;
+      min-width: auto;
       max-width: none;
       width: 90%;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .VPDoc.has-sidebar.has-aside .container>.content .content-container {
+    width: 90%;
   }
 }
 
@@ -131,6 +157,13 @@ table code,
   padding-left: calc(var(--vp-sidebar-width) + 48px) !important;
   padding-right: 0 !important;
 }
+
+@media (max-width: 960px) {
+  .VPContent.has-sidebar {
+    padding-left: 0 !important;
+  }
+}
+
 /* 确保暗色模式时高亮状态的链接可见 */
 .dark .VPSidebar .is-active .link {
   color: var(--vp-c-brand) !important;
@@ -248,80 +281,101 @@ table code,
   color: inherit !important;
 }
 
-/* 修复暗色模式下代码块的样式 */
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .VPDoc h1 {
+    font-size: 1.8rem;
+  }
+  
+  .VPHomeHero .text {
+    font-size: 1.5rem;
+  }
+  
+  .VPDoc .container {
+    padding: 0 1rem;
+  }
+}
+
+/* 确保内容在移动设备上正确显示 */
+@media (max-width: 480px) {
+  .VPDoc.has-sidebar.has-aside .container>.content .content-container {
+    width: 100%;
+  }
+  
+  pre, code {
+    --vp-code-font-size: 0.7em;
+  }
+}
+
+/* 保留原文件的其余部分 */
 .dark .vp-code-container,
-.dark div[class*='language-'] {
-  background-color: #1e1e1e !important; /* 更深色、更清晰的背景 */
-  backdrop-filter: none !important; /* 移除可能的模糊效果 */
-  box-shadow: none !important; /* 移除可能的阴影效果 */
-}
-
-/* 确保代码文本在暗色模式下清晰可见 */
+.dark pre,
 .dark code {
-  background-color: rgba(40, 40, 40, 0.8) !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(30, 30, 30, 0.9) !important;
 }
 
-/* 代码块内部的文本 */
+.dark code {
+  color: rgba(235, 235, 235, 0.8) !important;
+}
+
 .dark .vp-code-container code,
-.dark div[class*='language-'] code {
-  color: #e6e6e6 !important; /* 略微灰白色文字，更好的对比度 */
-  text-shadow: none !important; /* 移除可能的文本阴影 */
-  background-color: transparent !important; /* 确保代码内容背景透明 */
+.dark .token.punctuation {
+  color: rgba(235, 235, 235, 0.8) !important;
 }
 
-/* 代码块的各种高亮颜色 */
 .dark .token.comment,
+.dark .token.block-comment,
 .dark .token.prolog,
 .dark .token.doctype,
 .dark .token.cdata {
-  color: #608b4e !important;
+  color: rgba(114, 114, 114, 0.9) !important;
 }
 
 .dark .token.punctuation {
-  color: #d4d4d4 !important;
+  color: rgba(235, 235, 235, 0.8) !important;
 }
 
 .dark .token.property,
 .dark .token.tag,
 .dark .token.boolean,
 .dark .token.number,
+.dark .token.function-name,
 .dark .token.constant,
 .dark .token.symbol,
 .dark .token.deleted {
-  color: #569cd6 !important;
+  color: rgba(255, 99, 99, 0.9) !important;
 }
 
 .dark .token.selector,
 .dark .token.attr-name,
 .dark .token.string,
 .dark .token.char,
+.dark .token.function,
 .dark .token.builtin,
 .dark .token.inserted {
-  color: #ce9178 !important;
+  color: rgba(114, 206, 114, 0.9) !important;
 }
 
 .dark .token.operator,
 .dark .token.entity,
 .dark .token.url,
-.dark .language-css .token.string,
-.dark .style .token.string {
-  color: #d4d4d4 !important;
+.dark .token.variable {
+  color: rgba(255, 194, 102, 0.9) !important;
 }
 
 .dark .token.atrule,
 .dark .token.attr-value,
-.dark .token.keyword {
-  color: #c586c0 !important;
+.dark .token.keyword,
+.dark .token.class-name {
+  color: rgba(86, 156, 214, 0.9) !important;
 }
 
 .dark .token.function,
-.dark .token.class-name {
-  color: #dcdcaa !important;
+.dark .token.macro.property {
+  color: rgba(220, 220, 170, 0.9) !important;
 }
 
 .dark .token.regex,
-.dark .token.important,
-.dark .token.variable {
-  color: #9cdcfe !important;
+.dark .token.important {
+  color: rgba(255, 194, 102, 0.9) !important;
 }

@@ -1,0 +1,102 @@
+/* 响应式样式 */
+
+/* 移动设备导航栏 */
+@media (max-width: 767px) {
+  .VPNavBar .container {
+    padding: 0 12px;
+  }
+  
+  .VPNavBar.has-sidebar .content-body {
+    padding: 0 12px;
+  }
+  
+  /* 移动设备菜单按钮样式 */
+  .VPNavBarHamburger {
+    display: flex !important;
+    margin-right: 0;
+  }
+}
+
+/* 平板设备 */
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPNavBar .container {
+    padding: 0 24px;
+  }
+  
+  .VPDoc .container {
+    max-width: 100%;
+  }
+}
+
+/* 内容区域响应式调整 */
+@media (max-width: 959px) {
+  .VPDoc.has-aside .content-container {
+    max-width: 100%;
+  }
+  
+  .VPDocAside {
+    display: none;
+  }
+}
+
+/* 小屏幕手机 */
+@media (max-width: 419px) {
+  .VPHomeHero .name,
+  .VPHomeHero .text {
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .VPHomeFeatures .items {
+    grid-template-columns: 1fr;
+  }
+  
+  .VPDoc h1 {
+    font-size: 1.5rem;
+  }
+  
+  .VPDoc h2 {
+    font-size: 1.3rem;
+  }
+  
+  .VPDoc h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* 代码块在小屏幕上的显示 */
+  .vp-code-container {
+    margin: 0 -12px;
+    border-radius: 0;
+  }
+  
+  pre {
+    padding: 12px !important;
+  }
+}
+
+/* 图片响应式 */
+.vp-doc img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 表格响应式 */
+@media (max-width: 640px) {
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* 确保内容区域在不同设备上有合适的边距 */
+@media (max-width: 419px) {
+  .VPDoc .container {
+    padding: 0 12px;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 767px) {
+  .VPDoc .container {
+    padding: 0 16px;
+  }
+} 
