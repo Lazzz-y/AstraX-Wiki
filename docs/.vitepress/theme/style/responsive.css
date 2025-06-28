@@ -1,5 +1,10 @@
 /* 响应式样式 */
 
+/* 全局响应式设置 */
+html, body {
+  overflow-x: hidden; /* 防止水平滚动 */
+}
+
 /* 移动设备导航栏 */
 @media (max-width: 767px) {
   .VPNavBar .container {
@@ -14,6 +19,11 @@
   .VPNavBarHamburger {
     display: flex !important;
     margin-right: 0;
+  }
+  
+  /* 在移动端隐藏pet */
+  .pet {
+    display: none !important;
   }
 }
 
@@ -39,12 +49,125 @@
   }
 }
 
-/* 小屏幕手机 */
+/* 首页响应式布局 - 通用 */
+.VPHome {
+  padding-bottom: 64px !important;
+}
+
+/* 首页响应式布局 - 平板和移动设备 */
+@media (max-width: 959px) {
+  .VPHome {
+    padding-top: 24px !important;
+  }
+  
+  .VPHomeHero {
+    padding: 0 24px;
+  }
+  
+  .VPHomeHero .container {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  
+  .VPHomeHero .main {
+    margin-right: 0 !important;
+    margin-bottom: 32px;
+  }
+  
+  .VPHomeHero .image {
+    margin: 0 auto !important;
+    max-width: 280px !important;
+  }
+  
+  /* 确保Logo居中显示 */
+  .VPHomeHero .image-container {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  .VPHomeFeatures .container {
+    padding: 0 24px !important;
+  }
+  
+  .VPHomeFeatures .items {
+    gap: 16px !important;
+  }
+}
+
+/* 首页响应式布局 - 小屏幕设备 */
+@media (max-width: 639px) {
+  .VPHome {
+    padding-top: 16px !important;
+  }
+  
+  .VPHomeHero {
+    padding: 0 16px;
+  }
+  
+  .VPHomeHero .name,
+  .VPHomeHero .text {
+    font-size: 1.5rem !important;
+  }
+  
+  .VPHomeHero .tagline {
+    font-size: 1rem !important;
+  }
+  
+  .VPHomeHero .image {
+    max-width: 220px !important;
+  }
+  
+  /* 确保Logo居中显示 */
+  .VPHomeHero .image-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  .VPHomeHero .actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .VPHomeHero .actions .action:not(:last-child) {
+    margin-right: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .VPHomeFeatures .container {
+    padding: 0 16px !important;
+  }
+  
+  .VPHomeFeatures .items {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 首页响应式布局 - 极小屏幕设备 */
 @media (max-width: 419px) {
   .VPHomeHero .name,
   .VPHomeHero .text {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
     letter-spacing: -0.5px;
+  }
+  
+  .VPHomeHero .tagline {
+    font-size: 0.9rem !important;
+  }
+  
+  .VPHomeHero .image {
+    max-width: 180px !important;
+  }
+  
+  /* 确保Logo居中显示 */
+  .VPHomeHero .image-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
   
   .VPHomeFeatures .items {
@@ -98,5 +221,24 @@
 @media (min-width: 420px) and (max-width: 767px) {
   .VPDoc .container {
     padding: 0 16px;
+  }
+}
+
+/* 修复移动设备上可能的布局问题 */
+@media (max-width: 767px) {
+  /* 确保页脚正确显示 */
+  .VPFooter {
+    padding: 24px 20px !important;
+  }
+  
+  /* 修复可能的溢出问题 */
+  .VPContent {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* 在移动端隐藏pet */
+  .pet {
+    display: none !important;
   }
 } 
