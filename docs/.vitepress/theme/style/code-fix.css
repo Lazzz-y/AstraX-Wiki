@@ -1,0 +1,142 @@
+/* 修复代码块内的空白行问题 */
+
+/* 调整代码块内的行高 */
+.vp-doc div[class*='language-'] pre {
+  line-height: 1.4 !important;
+  padding: 0.5em 1.5em !important;
+}
+
+/* 移除代码块内的多余空白 */
+.vp-doc div[class*='language-'] pre code {
+  white-space: pre !important;
+}
+
+/* 确保yaml代码块正确显示 */
+.vp-doc div[class*='language-yaml'] pre code {
+  white-space: pre !important;
+  line-height: 1.4 !important;
+}
+
+/* 修复代码块内的空行问题 */
+.vp-doc div[class*='language-'] .line {
+  min-height: 1.4em !important;
+  padding: 0 !important;
+}
+
+/* 确保代码块内的内容紧凑显示 */
+.vp-doc div[class*='language-'] code {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: var(--vp-code-font-size) !important;
+  line-height: 1.4 !important;
+}
+
+/* 调整代码块整体样式 */
+.vp-doc div[class*='language-'] {
+  margin: 16px 0 !important;
+  background-color: var(--vp-code-block-bg) !important;
+  overflow-x: auto !important;
+  transition: background-color 0.5s !important;
+}
+
+/* 确保代码内容不会被截断 */
+.vp-doc [class*='language-'] pre {
+  position: relative !important;
+  z-index: 1 !important;
+  margin: 0 !important;
+  padding: 0.5em 1.5em !important;
+  background: transparent !important;
+  overflow-x: auto !important;
+}
+
+/* 解决可能的字体问题 */
+.vp-doc [class*='language-'] code {
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: var(--vp-code-font-size) !important;
+  -webkit-font-smoothing: auto !important;
+  padding: 0 !important;
+  line-height: 1.4 !important;
+  display: block !important;
+}
+
+/* 调整代码块内容间距 */
+.vp-doc [class*='language-'] code .line {
+  padding: 0 !important;
+  line-height: 1.4 !important;
+  min-height: 0 !important;
+}
+
+/* 特别处理YAML代码块 */
+.vp-doc div[class*='language-yaml'] {
+  overflow: hidden !important;
+}
+
+.vp-doc div[class*='language-yaml'] pre {
+  overflow-x: auto !important;
+  padding-bottom: 0 !important;
+}
+
+.vp-doc div[class*='language-yaml'] code {
+  padding: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* 移除可能的额外空白 */
+.vp-doc div[class*='language-yaml'] code .line:empty {
+  display: none !important;
+}
+
+/* 修复行号显示 */
+.vp-doc div[class*='language-'] .line-numbers {
+  line-height: 1.4 !important;
+  font-family: var(--vp-font-family-mono) !important;
+}
+
+/* 确保代码块中的注释正确显示 */
+.vp-doc div[class*='language-'] .token.comment {
+  line-height: 1.4 !important;
+}
+
+/* 修复空行问题 */
+.vp-doc div[class*='language-'] .highlighted {
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 修复暗黑主题下代码块的蒙版效果 - 与Dracula主题兼容 */
+.dark .vp-doc div[class*='language-'] {
+  background-color: var(--dracula-background) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 1px solid var(--dracula-current-line) !important;
+}
+
+.dark .vp-doc div[class*='language-'] pre {
+  background-color: transparent !important;
+}
+
+.dark .vp-doc div[class*='language-'] code {
+  background-color: transparent !important;
+}
+
+/* 修复暗黑主题下代码块的颜色 - 与Dracula主题兼容 */
+.dark .vp-code-container,
+.dark pre,
+.dark code {
+  background-color: var(--dracula-background) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 确保代码块与页面背景有明显区分 */
+.dark .vp-doc div[class*='language-'] {
+  border-radius: 6px !important;
+}
+
+/* 修复代码块内部元素的背景色 */
+.dark .vp-doc div[class*='language-'] .line-numbers-wrapper,
+.dark .vp-doc div[class*='language-'] .highlight-lines {
+  background-color: transparent !important;
+} 

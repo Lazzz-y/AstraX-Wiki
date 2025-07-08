@@ -25,6 +25,28 @@
   --vp-font-family-base: "Zpix";
   --vp-font-family-mono: "PS2P", "Zpix";
   /* --vp-font-family-mono: "Zpix", "PS2P"; */
+  
+  /* 代码块背景色 */
+  --vp-code-block-bg: #f9f9f9;
+  
+  /* Dracula Theme Colors */
+  --dracula-background: #282a36;
+  --dracula-current-line: #44475a;
+  --dracula-selection: #44475a;
+  --dracula-foreground: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #8be9fd;
+  --dracula-green: #50fa7b;
+  --dracula-orange: #ffb86c;
+  --dracula-pink: #ff79c6;
+  --dracula-purple: #bd93f9;
+  --dracula-red: #ff5555;
+  --dracula-yellow: #f1fa8c;
+}
+
+.dark:root {
+  /* 暗黑主题下代码块背景色 */
+  --vp-code-block-bg: var(--dracula-background);
 }
 
 body {

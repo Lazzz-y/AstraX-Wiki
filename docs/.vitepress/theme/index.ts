@@ -15,6 +15,8 @@ import "./style/rainbow.css";
 import "./style/dark.css";
 import "./style/search.css";
 import "./style/responsive.css";
+import "./style/code-fix.css";
+import "./style/dracula-theme.css";
 
 let homePageStyle: HTMLStyleElement | undefined;
 export default {
