@@ -30,7 +30,7 @@ export const sharedConfig = defineConfig({
   },
   markdown: {
     math: true,
-    lineNumbers: true,
+    // lineNumbers: true,
     image: {
       lazyLoading: true,
     },

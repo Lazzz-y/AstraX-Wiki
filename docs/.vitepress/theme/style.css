@@ -215,7 +215,9 @@ table code,
   color: rgba(255,255,255, 0.8) !important;
 }
 
-.dark .VPDoc h3 {
+.dark .VPDoc h3,
+.dark .VPDoc h4,
+.dark .VPDoc blockquote {
   /* background: -webkit-linear-gradient(10deg, #00FFFF 5%, #00FF7F 15%);
   background-clip: text;
   -webkit-background-clip: text;
