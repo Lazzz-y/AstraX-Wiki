@@ -31,9 +31,19 @@ export const zhCNSidebar: DefaultTheme.Sidebar = {
           collapsed: false,
           items: [
             { text: "物品槽条件", link: `/AstraXHero/条件系统/物品槽条件` },
+            { text: "脚本条件", link: `/AstraXHero/条件系统/脚本条件` },
           ],
         },
-        { text: "Placeholder", link: `/AstraXHero/Placeholder` },
+        {
+          text: "MythicMobs",
+          collapsed: false,
+          items: [
+            {
+              text: "MythicMobs兼容",
+              link: `/AstraXHero/MythicMobs/MythicMobs兼容`,
+            },
+          ],
+        },
       ],
     },
   ],
