@@ -22,6 +22,10 @@ options:
     eve-fight-cal: false
   # 选择属性读取源
   read:
+    # 百分百读取符号 --- 当使用 lore 读取属性时，该符号将用于百分比读取
+    # 支持正则表达式 如: "\\(%\\)"、'\(%\)'、\(%\) 匹配的都是(%)
+    # 因为在正则表达式中括号有特殊语意，所以需要 \ 转义
+    percent: '\(%\)'
     # 是否读取物品描述
     lore: true
     # 是否读取NBT
@@ -44,6 +48,13 @@ options:
     #        min: "最小属性值"
     #        max: "最大属性值"
     # 如果该属性为固定值，则只需填写min(最小属性值)
+    # 百分比属性使用 operator: '%'
+    # 例如：
+    #   Attribute:
+    #     "属性标签":
+    #        min: "最小属性值"
+    #        max: "最大属性值"
+    #        operator: '%'
     tag: Attribute
     # Lore读取格式 @key=属性标签 @value=属性值
     format:

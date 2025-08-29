@@ -22,8 +22,8 @@
 }
 
 :root {
-  --vp-font-family-base: "Zpix";
-  --vp-font-family-mono: "PS2P", "Zpix";
+  /* --vp-font-family-base: "Zpix";
+  --vp-font-family-mono: "PS2P", "Zpix"; */
   /* --vp-font-family-mono: "Zpix", "PS2P"; */
   
   /* 代码块背景色 */
