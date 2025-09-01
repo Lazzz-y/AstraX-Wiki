@@ -76,6 +76,7 @@ export const zhCNSidebar: DefaultTheme.Sidebar = {
             { text: "ScriptTool", link: `/AstraXHero/开发者文档/ScriptTool` },
           ],
         },
+        { text: "更新记录", link: `/AstraXHero/更新记录` },
       ],
     },
   ],
