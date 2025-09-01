@@ -4,11 +4,10 @@ description: AstraXHero MythicMobs兼容
 ---
 # MythicMobs兼容
 ## 配置节点
-- DamageTypes: 配置MM怪物适配AstraXHero使用的伤害类型，该节点的值需要在 `damage_type` 中存在
 - Calc: 是否开启动态属性生成 false true
 - 属性配置节点: 配置MM生成时拥有的属性
 ::: warning 提醒
-属性配置节点需要和 `config.yml` 里面的MM读取节点保持一致，当插件reload时，存在于世界中的MM怪物的属性会失效；如果开启了Calc，属性配置节点则可以计算属性的值，本插件为你提供了怪物等级的占位符，如要使用怪物等级占位符请使用 `level`
+MythicMobs 的怪物攻击会自动由 AstraXHero 接管(包括技能) 当插件reload时，存在于世界中的MM怪物的属性会失效；如果开启了Calc，属性配置节点则可以计算属性的值，本插件为你提供了怪物等级的占位符，如要使用怪物等级占位符请使用 `level`
 :::
 ### 属性配置示例
 ```yml
@@ -18,12 +17,10 @@ Test:
   Health: 500000000
   Equipment:
     - IRON_HELMET HEAD
-  # 指定伤害类型 支持配置多个伤害类型
-  DamageTypes:
-    - default
   # 开启公式支持
   Calc: true
   AstraXHero:
+    - "物理攻击: 10-20"
     - "物理抵抗: {10 * level}" # 动态计算数值
     - "百分比减伤: {10 * level}(%)" # 百分比属性
   Options:
@@ -47,8 +44,7 @@ Test:
 - type: 接受 `attacker`、`defender`
 - 自定义变量: var1、var2 都为自定义参数。可自定义多个变量
 ### att-damage 
-格式: att-damage{key=default;cache=testCache;var1=1} @target
-- key: 此处的key是指定当前技能伤害使用哪一个伤害类型。
+格式: att-damage{cache=testCache;var1=1} @target
 - cache: 使用 `att-cache` 中指定的 `key` 就可以将 `cache` 应用在 `att-damage`
 - 自定义变量: 和 `cache` 一样，都接受自定义变量
 :::tip 

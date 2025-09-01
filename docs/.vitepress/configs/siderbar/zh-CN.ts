@@ -11,9 +11,14 @@ export const zhCNSidebar: DefaultTheme.Sidebar = {
           text: "配置",
           collapsed: false,
           items: [
+            {
+              text: "语言",
+              collapsed: false,
+              items:
+              [ {text: "zh_CN.yml", link: "/AstraXHero/配置/语言/zh_CN.yml"} ]
+            },
             { text: "config.yml", link: `/AstraXHero/配置/config.yml` },
             { text: "settings.yml", link: `/AstraXHero/配置/setting.yml` },
-            { text: "message.yml", link: `/AstraXHero/配置/message.yml` },
           ],
         },
         {
@@ -21,9 +26,17 @@ export const zhCNSidebar: DefaultTheme.Sidebar = {
           collapsed: false,
           items: [
             { text: "属性类型", link: `/AstraXHero/属性系统/属性类型` },
-            { text: "伤害体系", link: `/AstraXHero/属性系统/伤害体系` },
-            { text: "脚本系统", link: `/AstraXHero/属性系统/脚本系统` },
-            { text: "属性实现", link: `/AstraXHero/属性系统/属性实现` },
+            {
+              text: "脚本教学",
+              collapsed: false,
+              items: [
+                {text: "前言", link: `/AstraXHero/属性系统/脚本教学/前言`},
+                {text: "ATTACK", link: `/AstraXHero/属性系统/脚本教学/ATTACK`},
+                {text: "DEFENSE", link: `/AstraXHero/属性系统/脚本教学/DEFENSE`},
+                {text: "UPDATE  ", link: `/AstraXHero/属性系统/脚本教学/UPDATE`},
+                {text: "RUNTIME  ", link: `/AstraXHero/属性系统/脚本教学/RUNTIME`},
+              ]
+            },
           ],
         },
         {
@@ -42,6 +55,25 @@ export const zhCNSidebar: DefaultTheme.Sidebar = {
               text: "MythicMobs兼容",
               link: `/AstraXHero/MythicMobs/MythicMobs兼容`,
             },
+          ],
+        },
+        {
+          text: "开发者文档",
+          collapsed: false,
+          items: [
+            { text: "Manager", 
+              collapsed: false,  
+              items: [
+                { text: "待完善", link: `/AstraXHero/开发者文档/Manager/待完善` },
+              ]
+            },
+            { text: "AttributeAPI", link: `/AstraXHero/开发者文档/AttributeAPI` },
+            { text: "CalculateUtils", link: `/AstraXHero/开发者文档/CalculateUtils` },
+            { text: "Coerce", link: `/AstraXHero/开发者文档/Coerce` },
+            { text: "Color", link: `/AstraXHero/开发者文档/Color` },
+            { text: "Log", link: `/AstraXHero/开发者文档/Log` },
+            { text: "NumberUtils", link: `/AstraXHero/开发者文档/NumberUtils` },
+            { text: "ScriptTool", link: `/AstraXHero/开发者文档/ScriptTool` },
           ],
         },
       ],

@@ -25,10 +25,10 @@
   /* --vp-font-family-base: "Zpix";
   --vp-font-family-mono: "PS2P", "Zpix"; */
   /* --vp-font-family-mono: "Zpix", "PS2P"; */
-  
+
   /* 代码块背景色 */
   --vp-code-block-bg: #f9f9f9;
-  
+
   /* Dracula Theme Colors */
   --dracula-background: #282a36;
   --dracula-current-line: #44475a;
@@ -57,12 +57,12 @@ body {
 
 /* .vitepress/theme/style/var.css */
 .VPDoc h1 {
-  background: linear-gradient(left, 
-  #ff0000, #ff8000, #ffff00, #00ff00, 
-  #00ffff, #0000ff, #8000ff, #ff00ff);
-  background: -webkit-linear-gradient(left, 
-  #ff0000, #ff8000, #ffff00, #00ff00, 
-  #00ffff, #0000ff, #8000ff, #ff00ff);
+  background: linear-gradient(left,
+      #ff0000, #ff8000, #ffff00, #00ff00,
+      #00ffff, #0000ff, #8000ff, #ff00ff);
+  background: -webkit-linear-gradient(left,
+      #ff0000, #ff8000, #ffff00, #00ff00,
+      #00ffff, #0000ff, #8000ff, #ff00ff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -79,17 +79,66 @@ body {
 }
 
 .VPFeature .box .details {
-  font-size: 14px;
+  font-size: 1px;
 }
 
-pre, code {
-  --vp-code-font-size: 0.75em;
+/* 增大文档字体大小 */
+:root {
+  --vp-font-size-base: 16px;
+  /* 基础字体大小从14px增加到16px */
+  --vp-font-size-md: 18px;
+  /* 中等字体大小 */
+  --vp-font-size-lg: 20px;
+  /* 大字体大小 */
 }
+
+/* 文档内容字体大小 */
+.vp-doc {
+  font-size: var(--vp-font-size-base);
+  line-height: 1.7;
+  /* 增加行高提升可读性 */
+}
+
+.vp-doc p {
+  font-size: var(--vp-font-size-base);
+  line-height: 1.7;
+}
+
+.vp-doc li {
+  font-size: var(--vp-font-size-base);
+  line-height: 1.6;
+}
+
+/* 增大代码字体大小 */
+pre,
+code {
+  --vp-code-font-size: 0.9em;
+  /* 从0.75em增加到0.9em */
+  font-size: 15px;
+  /* 明确设置代码字体大小 */
+}
+
 table pre,
 table code,
 .api-typing code {
-  --vp-code-font-size: 0.875em;
+  --vp-code-font-size: 1em;
+  /* 从0.875em增加到1em */
   font-family: 'Zpix';
+  font-size: 15px;
+}
+
+/* 代码块字体大小 */
+.vp-code-group .blocks {
+  font-size: 15px;
+}
+
+div[class*='language-'] pre {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+div[class*='language-'] code {
+  font-size: 15px;
 }
 
 .vp-code code {
@@ -161,6 +210,7 @@ table code,
   .container>.content {
     display: flex;
     justify-content: center;
+
     .content-container {
       min-width: auto;
       max-width: none;
@@ -212,7 +262,7 @@ table code,
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  color: rgba(255,255,255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .dark .VPDoc h3,
@@ -222,7 +272,7 @@ table code,
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  color: rgba(255,255,255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* 暗色模式下页面切换组件 */
@@ -310,13 +360,23 @@ table code,
   .VPDoc h1 {
     font-size: 1.8rem;
   }
-  
+
   .VPHomeHero .text {
     font-size: 1.5rem;
   }
-  
+
   .VPDoc .container {
     padding: 0 1rem;
+  }
+
+  /* 平板设备字体大小 */
+  :root {
+    --vp-font-size-base: 15px;
+  }
+
+  pre,
+  code {
+    font-size: 14px;
   }
 }
 
@@ -325,9 +385,23 @@ table code,
   .VPDoc.has-sidebar.has-aside .container>.content .content-container {
     width: 100%;
   }
-  
-  pre, code {
-    --vp-code-font-size: 0.7em;
+
+  /* 移动端字体大小调整 */
+  :root {
+    --vp-font-size-base: 15px;
+    /* 移动端稍微小一点但仍比原来大 */
+  }
+
+  pre,
+  code {
+    --vp-code-font-size: 0.85em;
+    /* 移动端代码字体 */
+    font-size: 14px;
+  }
+
+  div[class*='language-'] pre,
+  div[class*='language-'] code {
+    font-size: 14px;
   }
 }
 
